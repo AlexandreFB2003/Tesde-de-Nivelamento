@@ -34,7 +34,6 @@
   </script>
   
   <style scoped>
-  /* Estilos para o componente de busca */
   input {
     padding: 8px;
     margin-bottom: 10px;

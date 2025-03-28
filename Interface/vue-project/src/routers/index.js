@@ -1,16 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router'; // Use o Vue Router 4
+import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomePage,  // Componente de página inicial
+    component: HomePage,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),  // Usar o history para navegação sem recarregar a página
+  history: createWebHistory(),
   routes,
 });
 
