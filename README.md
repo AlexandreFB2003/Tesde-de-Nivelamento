@@ -4,13 +4,23 @@ Este repositório é referente ao teste de nivelamento para a vaga de estágio n
 
 Organização:
   A pasta Scraping_and_transformation é referente aos testes 1 e 2
+
+  
     - O arquivo web_scraping.py faz o scraping da págna fornecida e realiza o dowload dos arquivos em uma pasta .zip chamada Anexos
+
+    
     - O arquivo scriptDataTransformation.py utiliza a pasta Anexos, extrai os dados referente ao Anexo I e cria um arquivo CSV chamada Rol_de_procedimentos dentro de uma pasta .zip 
       chamada Teste_Alexandre
 
   A pasta Database é referente ao teste 3
+
+  
     - A pasta Data contém todos os arquivos de dados fornecidos
+
+    
     - A pasta sql_scripts contém os arquivos com os scripts sql compatíveis com o Banco de Dados PostgreSQL
+
+    
     - O Arquivo database.py é um código em python que executa um dos scripts sql 
 
   A pasta Server e Interface é referente ao teste 4
