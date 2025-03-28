@@ -1,36 +1,88 @@
-# Tesde-de-Nivelamento
+Tesde-de-Nivelamento
+Este repositório contém a implementação do teste de nivelamento para a vaga de estágio na Intuitive Care.
 
-Este repositório é referente ao teste de nivelamento para a vaga de estágio na empresa Intuitive Care
+Organização do Projeto
+📂 Scraping_and_transformation (Testes 1 e 2)
+web_scraping.py → Realiza o scraping da página fornecida e faz o download dos arquivos em uma pasta .zip chamada Anexos.
 
-Organização:
+scriptDataTransformation.py → Usa os arquivos da pasta Anexos, extrai os dados referentes ao Anexo I e gera um arquivo .csv chamado Rol_de_procedimentos dentro de uma pasta .zip chamada Teste_Alexandre.
 
-  A pasta Scraping_and_transformation é referente aos testes 1 e 2
+📂 Database (Teste 3)
+Data/ → Contém os arquivos de dados fornecidos.
 
-  
-    - O arquivo web_scraping.py faz o scraping da págna fornecida e realiza o dowload dos arquivos em uma pasta .zip chamada Anexos
-    
-    - O arquivo scriptDataTransformation.py utiliza a pasta Anexos, extrai os dados referente ao Anexo I e cria um arquivo CSV chamada Rol_de_procedimentos dentro de uma pasta .zip 
-      chamada Teste_Alexandre
+sql_scripts/ → Scripts SQL compatíveis com o banco de dados PostgreSQL.
 
-  A pasta Database é referente ao teste 3
+database.py → Script Python que executa um dos scripts SQL.
 
-  
-    - A pasta Data contém todos os arquivos de dados fornecidos
+📂 Server e Interface (Teste 4)
+📂 Server (Backend)
 
-    - A pasta sql_scripts contém os arquivos com os scripts sql compatíveis com o Banco de Dados PostgreSQL
-    
-    - O Arquivo database.py é um código em python que executa um dos scripts sql 
+Desenvolvido com Flask em arquitetura MVC.
 
-  A pasta Server e Interface é referente ao teste 4
+API que lê o arquivo .csv fornecido e retorna os registros baseados na query enviada como parâmetro.
 
-  
-    - A pasta Server é referente ao backend, utilizei o framework Flask e construí o servidor em uma arquitetura MVC. Possue uma API que faz a leitura do arquivo CSV fornecido e retorna 
-      os registros baseados na query enviada como parâmetro. A pasta Postman contém a colection feita para teste.
-      
-    - A pasta Interface é referente a frontend, onde criei uma aplicação web com o framework vue.js, onde o usuário digita o nome desejado, a aplicação consome a API e retorna as 
-      operadoras referentes ao nome digitado.
+📂 Postman/ → Contém a collection para testes.
 
+📂 Interface (Frontend)
 
- Nas pastas contém imagens referentes aos testes realizados.
+Aplicação web feita com Vue.js.
 
-  
+Permite buscar operadoras pelo nome digitado e exibe os resultados consumindo a API do backend.
+
+🚀 Como Rodar o Projeto
+🔧 Pré-requisitos
+Certifique-se de ter instalados:
+
+Python 3
+
+Node.js
+
+PostgreSQL
+
+Git
+
+⚙️ Configuração do Backend (Server)
+Instale as dependências:
+
+sh
+Copiar
+Editar
+pip install flask flask-cors
+Execute o servidor:
+
+sh
+Copiar
+Editar
+python app.py
+O backend estará rodando em:
+
+arduino
+Copiar
+Editar
+http://localhost:5000
+🎨 Configuração do Frontend (Interface)
+Acesse a pasta do frontend:
+
+sh
+Copiar
+Editar
+cd Interface/vue-project
+Instale as dependências:
+
+sh
+Copiar
+Editar
+npm install
+Execute o frontend:
+
+sh
+Copiar
+Editar
+npm run serve
+A interface estará disponível em:
+
+arduino
+Copiar
+Editar
+http://localhost:8080
+Caso tenha dúvidas ou precise de mais detalhes, sinta-se à vontade para entrar em contato! 🚀
