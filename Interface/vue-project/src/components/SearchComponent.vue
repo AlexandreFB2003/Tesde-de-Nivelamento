@@ -22,7 +22,7 @@
     methods: {
       async search() {
         if (this.query.length > 2) {
-          const response = await fetch(`http://127.0.0.1:5000/api/search?query=${this.query}`);
+          const response = await fetch(`http://127.0.0.1:5000/search?query=${this.query}`);
           const data = await response.json();
           this.results = data;
         } else {
