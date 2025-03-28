@@ -21,6 +21,8 @@ CREATE TABLE operadoras (
     data_registro_ans DATE
 );
 
+
+
 CREATE TABLE demonstracoes_contabeis (
     data DATE NOT NULL,
     reg_ans INT NOT NULL,

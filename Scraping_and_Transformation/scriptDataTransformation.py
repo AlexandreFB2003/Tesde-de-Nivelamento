@@ -3,7 +3,7 @@ import pdfplumber
 import pandas as pd
 import os
 
-# Caminho para o arquivo zip contendo os anexos
+# Caminho para o pasta zip contendo os anexos
 anexos_zip = "anexos.zip"
 
 # Pasta onde os arquivos extraídos serão armazenados
@@ -12,16 +12,16 @@ extract_folder = "anexos_extraidos"
 # Nome do arquivo CSV gerado
 csv_filename = "Rol_de_Procedimentos.csv"
 
-# Nome do arquivo ZIP final
+# Nome da pasta ZIP final
 final_zip_filename = "Teste_Alexandre.zip"
 
-# Dicionário de substituições para abreviações
+# Dicionário de substituições para as abreviações
 substituicoes = {
     "OD": "Ocupação Odontológica",
     "AMB": "Ambulatorial"
 }
 
-# Criação da pasta de extração se ela não existir
+# Criação da pasta de extração
 if not os.path.exists(extract_folder):
     os.makedirs(extract_folder)
 
@@ -30,7 +30,7 @@ with zipfile.ZipFile(anexos_zip, "r") as zip_ref:
     zip_ref.extractall(extract_folder)
 
 # Caminho para o PDF extraído
-pdf_path = os.path.join(extract_folder, "Anexo1.pdf")
+pdf_path = os.path.join(extract_folder, "Anexo_1.pdf")
 
 # Lista para armazenar os dados extraídos
 data = []
@@ -44,28 +44,26 @@ with pdfplumber.open(pdf_path) as pdf:
             for row in table:
                 data.append(row)
 
-# Verificando se a extração de dados foi bem-sucedida
 if data:
     # Criando um DataFrame a partir dos dados extraídos
     df = pd.DataFrame(data)
 
-    # Ajustando o cabeçalho e removendo a primeira linha (que é o cabeçalho duplicado)
+    # Ajustando o cabeçalho
     df.columns = df.iloc[0]
     df = df[1:]
 
-    # Substituindo as abreviações de acordo com o dicionário fornecido
+    # Substituindo as abreviações de acordo com o dicionário
     df.replace(substituicoes, inplace=True)
 
-    # Salvando o DataFrame em um arquivo CSV com separador ponto e vírgula
+    # Salvando o DataFrame em um arquivo CSV
     df.to_csv(csv_filename, index=False, sep=';', encoding="utf-8-sig")
     print(f"Arquivo CSV '{csv_filename}' gerado com sucesso!")
 
-    # Compactando o arquivo CSV em um arquivo ZIP final
+    # Compactando o arquivo CSV em um arquivo ZIP
     with zipfile.ZipFile(final_zip_filename, "w", zipfile.ZIP_DEFLATED) as zipf:
         zipf.write(csv_filename)
     print(f"Arquivo ZIP '{final_zip_filename}' gerado com sucesso!")
 
-    # Remover o arquivo CSV após a compactação
     os.remove(csv_filename)
     print(f"Arquivo CSV '{csv_filename}' removido após compactação")
 else:
