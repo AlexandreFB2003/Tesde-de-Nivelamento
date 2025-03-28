@@ -8,7 +8,7 @@ FROM
 JOIN 
     operadoras o ON d.reg_ans = o.registro_ans
 WHERE 
-    LOWER(d.descricao) LIKE '%eventos/ sinistros conhecidos ou avisados  de assistência a saúde medico hospitalar%'
+    LOWER(REGEXP_REPLACE(d.descricao, '\s+', ' ', 'g')) LIKE '%eventos/ sinistros conhecidos ou avisados de assistência a saúde medico hospitalar%'
     AND d.data BETWEEN '2024-10-01' AND '2024-12-31'
 GROUP BY 
     d.reg_ans, o.razao_social, d.descricao
@@ -28,7 +28,7 @@ FROM
 JOIN 
     operadoras o ON d.reg_ans = o.registro_ans
 WHERE 
-    LOWER(d.descricao) LIKE '%eventos/ sinistros conhecidos ou avisados  de assistência a saúde medico hospitalar%'
+    LOWER(REGEXP_REPLACE(d.descricao, '\s+', ' ', 'g')) LIKE '%eventos/ sinistros conhecidos ou avisados de assistência a saúde medico hospitalar%'
     AND d.data BETWEEN '2024-01-01' AND '2024-12-31'
 GROUP BY 
     d.reg_ans, o.razao_social, d.descricao

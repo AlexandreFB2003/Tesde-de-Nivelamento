@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "077163be-e514-4bd1-a8d6-d41700aa4bb8",
+		"name": "Teste de Nivelamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35153920"
+	},
+	"item": [
+		{
+			"name": "Buscar Operadora",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=saúde",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "saúde"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
