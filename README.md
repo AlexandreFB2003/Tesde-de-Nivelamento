@@ -1,88 +1,33 @@
-Tesde-de-Nivelamento
-Este repositório contém a implementação do teste de nivelamento para a vaga de estágio na Intuitive Care.
+# **Teste de Nivelamento**
 
-Organização do Projeto
-📂 Scraping_and_transformation (Testes 1 e 2)
-web_scraping.py → Realiza o scraping da página fornecida e faz o download dos arquivos em uma pasta .zip chamada Anexos.
+Este repositório contém a solução do teste de nivelamento para a vaga de estágio na empresa **Intuitive Care**.
 
-scriptDataTransformation.py → Usa os arquivos da pasta Anexos, extrai os dados referentes ao Anexo I e gera um arquivo .csv chamado Rol_de_procedimentos dentro de uma pasta .zip chamada Teste_Alexandre.
+## **Organização do Repositório**
 
-📂 Database (Teste 3)
-Data/ → Contém os arquivos de dados fornecidos.
+### 📌 **Scraping e Transformação de Dados (Testes 1 e 2)**
 
-sql_scripts/ → Scripts SQL compatíveis com o banco de dados PostgreSQL.
+📂 **`Scraping_and_transformation/`**
 
-database.py → Script Python que executa um dos scripts SQL.
+- **`web_scraping.py`** → Realiza web scraping da página fornecida e faz o download dos arquivos em um diretório `.zip` chamado **Anexos**.
+- **`scriptDataTransformation.py`** → Utiliza os arquivos da pasta **Anexos**, extrai os dados do **Anexo I** e gera um arquivo CSV chamado **Rol\_de\_procedimentos**, armazenado dentro de um `.zip` chamado **Teste\_Alexandre**.
 
-📂 Server e Interface (Teste 4)
-📂 Server (Backend)
+### 🗄️ **Banco de Dados (Teste 3)**
 
-Desenvolvido com Flask em arquitetura MVC.
+📂 **`Database/`**
 
-API que lê o arquivo .csv fornecido e retorna os registros baseados na query enviada como parâmetro.
+- **📂 `Data/`** → Contém todos os arquivos de dados fornecidos.
+- **📂 `sql_scripts/`** → Scripts SQL compatíveis com PostgreSQL.
+- **`database.py`** → Código Python que executa um dos scripts SQL no banco de dados.
 
-📂 Postman/ → Contém a collection para testes.
+### 🔌 **Servidor e Interface Web (Teste 4)**
 
-📂 Interface (Frontend)
+📂 **`Server/`** → Backend desenvolvido com **Flask** seguindo a arquitetura **MVC**.
 
-Aplicação web feita com Vue.js.
+- Contém uma API que lê o arquivo **CSV** fornecido e retorna os registros com base na **query** enviada como parâmetro.
+- A pasta **Postman/** contém a **collection** utilizada para testes.
 
-Permite buscar operadoras pelo nome digitado e exibe os resultados consumindo a API do backend.
+📂 **`Interface/`** → Frontend desenvolvido com **Vue.js**.
 
-🚀 Como Rodar o Projeto
-🔧 Pré-requisitos
-Certifique-se de ter instalados:
+- Aplicação web onde o usuário insere um nome, a aplicação consome a API e retorna as operadoras correspondentes.
 
-Python 3
-
-Node.js
-
-PostgreSQL
-
-Git
-
-⚙️ Configuração do Backend (Server)
-Instale as dependências:
-
-sh
-Copiar
-Editar
-pip install flask flask-cors
-Execute o servidor:
-
-sh
-Copiar
-Editar
-python app.py
-O backend estará rodando em:
-
-arduino
-Copiar
-Editar
-http://localhost:5000
-🎨 Configuração do Frontend (Interface)
-Acesse a pasta do frontend:
-
-sh
-Copiar
-Editar
-cd Interface/vue-project
-Instale as dependências:
-
-sh
-Copiar
-Editar
-npm install
-Execute o frontend:
-
-sh
-Copiar
-Editar
-npm run serve
-A interface estará disponível em:
-
-arduino
-Copiar
-Editar
-http://localhost:8080
-Caso tenha dúvidas ou precise de mais detalhes, sinta-se à vontade para entrar em contato! 🚀
+📸 Dentro das pastas, há imagens referentes aos testes realizados.
