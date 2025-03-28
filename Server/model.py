@@ -1,5 +1,3 @@
-# models.py
-
 import csv
 from config import Config
 
